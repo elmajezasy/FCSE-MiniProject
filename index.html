@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="witdh=device-witdh,initial-scale=1.0">
+    <title>FCSE-Mini Project</title>
+    <link rel="shortcut icon" href="/assets/calculator.png">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/index.js"></script>
+</head>
+<body class="body">'
+    <!-- title -->
+    <h1 class="title">Welcome to Mini Calculator</h1>
+    <p class="subtitle">
+        "A simple web calculator that helps you solve flat shape calculations"
+    </p>
+    <!-- header / navbar -->
+    <header>
+        <nav>
+            <div class="menu">
+                <a href="#Triangle" class="menu-triangle">Triangle</a>
+                <a href="#Parallelogram" class="menu-parallelogram">Parallelogram</a>
+            </div>
+        </nav>
+    </header>
+    <!-- main -->
+    <main>
+        <section id="Triangle">
+            <div class="card-triangle">
+                <div>
+                    <h2 class="triangle-subdiv">Area of Triangle</h2>
+                </div>
+                <img class="image-triangle" src="/assets/Triangle.jpg" alt="Triangle">
+                <div>
+                    <h3 class="formula">Formula :</h3>
+                    <p class="subformula">A= 1/2 x base x height</p>
+                </div>
+                <div>
+                    <p>Where:</p>
+                    <p>A = Area</p>
+                    <p>a = Base</p>
+                    <p>t = Height</p>
+                </div>
+                <div class="form-calculation">
+                    <h1 class="calculate">Calculate area of triangle</h1>
+                    <form action="" class="form-triangle" id="triangle_area">
+                        <input id="base" name="base" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Base Value" type="text" required/>
+                        <input id="height" name="height" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Height Value" type="text" required/>
+                        <br/>
+                        <span><span id="result-of-triangle-area" class="result"></span>
+                        <br><br/>
+                        <button type="submit" class="button-triangle" onclick="return triangle_area()">Calculate</button>
+                    </form>
+                    <button type="reset" class="button-reset" onclick="reset()">Reset</button>
+                </div>
+            </div>
+            <br/>
+            <div class="card-triangle">
+                <div>
+                    <h2 class="triangle-subdiv">Circle of Triangle</h2>
+                </div>
+                <img class="image-triangle" src="/assets/Triangle.jpg" alt="Triangle">
+                <div>
+                    <h3 class="formula">Formula :</h3>
+                    <p class="subformula">C = side a + side b + side c</p>
+                </div>
+                <div>
+                    <p>Where:</p>
+                    <p>C = Circle</p>
+                    <p>a = side a</p>
+                    <p>b = side b</p>
+                    <p>c = side c</p>
+                </div>
+                <div class="form-calculation">
+                    <h1 class="calculate">Calculate circle of triangle</h1>
+                    <form onsubmit="return triangle-circle" action="" class="form-triangle" id="triangle_circle">
+                        <input id="sideA" name="sideA" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Side a Value" type="text" required/>
+                        <input id="sideB" name="sideB" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Side b Value" type="text" required/>
+                        <input id="sideC" name="sideC" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Side c Value" type="text" required/>
+                        <br/>
+                        <span><span id="result-of-triangle-circle" class="result"></span>
+                        <br><br/>
+                        <button type="submit" class="button-triangle" onclick="return triangle_circle()">Calculate</button>
+                    </form>
+                    <button type="reset" class="button-reset" onclick="reset()">Reset</button>
+                </div>
+            </div>
+        </section>
+        <section id="Parallelogram">
+            <div class="card-parallelogram">
+                <div>
+                    <h2 class="Parallelogram-subdiv">Area of Parallelogram</h2>
+                </div>
+                <img class="image-parallelogram" src="/assets/Parallelogram.jpg" alt="Parallelogram">
+                <div>
+                    <h3 class="formula">Formula :</h3>
+                    <p class="subformula">A = base x height</p>
+                </div>
+                <div>
+                    <p>Where:</p>
+                    <p>A = Area</p>
+                    <p>a = Base</p>
+                    <p>t = Height</p>
+                </div>
+                <div class="form-calculation">
+                    <h1 class="calculate">Calculate area of parallelogram</h1>
+                    <form onsubmit="return parallelogram_area" action="" class="form-parallelogram" id="parallelogram_area">
+                        <input id="baseP" name="baseP" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Base Value" type="text" required/>
+                        <input id="heightP" name="heightP" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Height Value" type="text" required/>
+                        <br/>
+                        <span><span id="result-of-parallelogram-area" class="result"></span>
+                        <br><br/>
+                        <button type="submit" class="button-parallelogram" onclick="return parallelogram_area()">Calculate</button>
+                    </form>
+                    <button type="reset" class="button-reset" onclick="reset()">Reset</button>
+                </div>
+            </div>
+            <br/>
+            <div class="card-parallelogram">
+                <div>
+                    <h2 class="Parallelogram-subdiv">Circle of Parallelogram</h2>
+                </div>
+                <img class="image-parallelogram" src="/assets/Parallelogram.jpg" alt="Parallelogram">
+                <div>
+                    <h3 class="formula">Formula :</h3>
+                    <p class="subformula">C = 2 x (side a + side b)</p>
+                </div>
+                <div>
+                    <p>Where:</p>
+                    <p>C = Circle</p>
+                    <p>a = side a</p>
+                    <b>b = side b</p>
+                </div>
+                <div class="form-calculation">
+                    <h1 class="calculate">Calculate circle of parallelogram</h1>
+                    <form onsubmit="parallelogram_circle" action="" class="form-parallelogram" id="parallelogram_circle">
+                        <input id="sideAP" name="sideAP" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Side a Value" type="text" required/>
+                        <input id="sideBP" name="sideBP" onblur="extractNumber(this,3,true);" onkeyup="extractNumber(this,3,true);" onkeypress="return blockNonNumbers(this, event, true, true);" placeholder="Side b Value" type="text" required/>
+                        <br/>
+                        <span><span id="result-of-parallelogram-circle" class="result"></span>
+                        <br><br/>
+                        <button type="submit" class="button-parallelogram" onclick="return parallelogram_circle()">Calculate</button>
+                    </form>
+                    <button type="reset" class="button-reset" onclick="reset()">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <footer>
+        <img class="image-footer" src="/assets/RevoU.png" alt="RevoU Mini Course">
+        <p class="footer">©2023 Ahmad Zulfikar ・ RevoU FCSE Mini Project</p>
+    </footer>
+</body>
+</html>
